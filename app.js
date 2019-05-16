@@ -14,6 +14,7 @@ require('./config/passport')(passport);
 // Load routes
 const auth = require('./routes/auth');
 const index = require('./routes/index');
+const stories = require('./routes/stories');
 
 // load keys
 const keys = require('./config/keys');
@@ -55,6 +56,7 @@ app.use((req, res, next) => {
 // load routes
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/stories', stories);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
